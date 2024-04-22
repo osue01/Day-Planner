@@ -28,8 +28,8 @@ $(document).ready(function () {
     $(".time-block").each(function () {
       const blockId = $(this).attr("id");
 
-      const userInput = localStorage.getItem(blockId);
-
+      const userInput = $(`#${blockId} textarea`).val();
+      localStorage.setItem(blockId, userInput);
       $(`#${blockId} textarea`).val(userInput);
     });
   });
@@ -41,13 +41,10 @@ $(document).ready(function () {
 
     $("#currentDate").text(currentDate);
   });
-  
 
-// const now = new Date();
-// const hourNow = now.getHours();
-// const minutes = now.getMinutes();
+  // const now = new Date();
+  // const hourNow = now.getHours();
+  // const minutes = now.getMinutes();
 
-// const currentTime = ${hourNow}:${minutes}
-
-
+  // const currentTime = ${hourNow}:${minutes}
 });
